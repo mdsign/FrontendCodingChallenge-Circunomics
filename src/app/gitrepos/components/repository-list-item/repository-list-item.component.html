@@ -1,0 +1,30 @@
+
+  <div class="l-avatar-container">
+    <img
+      [src]="repository?.owner?.avatar_url"
+      alt="Repo Owner"
+      [title]="repository?.owner?.login"
+    />
+  </div>
+
+  <div class="l-repo-details">
+    <div class="l-repo-name">
+      <span (click)="itemClick.emit(repository)">{{ repository?.name }}</span>
+    </div>
+
+    <div class="l-repo-description">{{ repository?.description }}</div>
+
+    <div class="l-repo-owner">
+      Created by: <span>{{ repository?.owner?.login }}</span>
+    </div>
+
+    <div class="l-repo-stars" title="Repo Stars">
+      <nb-icon icon="star-outline"></nb-icon>
+      <span>{{ repository?.stargazers_count }}</span>
+    </div>
+
+    <div class="l-repo-issues" title="Repo Issues">
+      <nb-icon icon="alert-circle-outline"></nb-icon>
+      <span>{{ repository?.open_issues_count }}</span>
+    </div>
+  </div>

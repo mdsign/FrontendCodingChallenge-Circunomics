@@ -1,0 +1,15 @@
+<nb-card nbSpinnerStatus="info">
+  <nb-list
+    nbInfiniteList
+    listenWindowScroll
+    [threshold]="500"
+    (bottomThreshold)="loadNext()"
+  >
+    <nb-list-item *ngFor="let repository of repositories">
+      <app-repository-list-item
+        [repository]="repository"
+        (itemClick)="open($event)"
+      ></app-repository-list-item>
+    </nb-list-item>
+  </nb-list>
+</nb-card>
