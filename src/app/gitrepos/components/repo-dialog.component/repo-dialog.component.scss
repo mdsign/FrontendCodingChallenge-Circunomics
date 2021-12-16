@@ -2,6 +2,96 @@
     border: 1px solid #CCCCCC;
     padding: 20px;
     background-color: #FAFAFA;
-    width: 50%;
-    height: 200px;;
+    width: 700px;
+    height: 360px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    .l-repo-details {
+        align-self: flex-start;
+        padding-left: 10px;
+        display: flex;
+    
+        .l-repo-avatar {
+          display: inline-block;
+          width: 105px;
+          height: 105px;
+          img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 100px;
+          }
+          .l-repo-owner {
+            font-size: small;
+            color: #6c757d;
+            text-align: center;
+            span {
+              font-weight: bold;
+              text-transform: capitalize;
+              color: #495057;
+            }
+          }
+        }
+        .l-repo-info {
+          display: inline-block;
+          vertical-align: top;
+          width: 80%;
+          margin-left: 10px;
+          .l-repo-name {
+            font-size: larger;
+            text-decoration: underline;
+            color: #4361ee;
+          }
+          .l-repo-description {
+            font-size: 14px;
+            font-style: italic;
+          }
+          .l-repo-topics {
+              background-color: #d9e4ff;
+              border-radius: 5px;
+              padding: 5px;
+              margin-right:3px;
+              line-height: 30px;
+          }
+          
+          .l-repo-stars {
+            background-color: #0077b6;
+            border-radius: 5px;
+            min-width: 75px;
+            padding: 5px;
+            width: auto;
+            display: inline-block;
+            margin-top: 5px;
+            color: #ffffff;
+          }
+      
+          .l-repo-issues {
+            background-color: #e9ecef;
+            border-radius: 5px;
+            min-width: 75px;
+            padding: 5px;
+            width: auto;
+            display: inline-block;
+            margin: 5px 0 0 10px;
+          }
+        }        
+      }
+
+    .l-rating-container {
+        margin: 0 auto;
+        text-align: center;
+        .l-rating-label {
+            font-weight: bold;
+              text-transform: capitalize;
+              color: #495057;
+        }
+    }
+
+    .l-dialog-buttons {
+        margin: 50px 0 0 0;
+        button { margin:0 10px;}
+        align-self: flex-end;
+    }
 }

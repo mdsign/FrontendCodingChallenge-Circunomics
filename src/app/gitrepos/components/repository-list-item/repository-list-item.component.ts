@@ -9,7 +9,11 @@ import { Repository } from '../../interfaces/gitrepo-interfaces';
 export class RepositoryListItemComponent {
   @Input() public repository?: Repository;
 
-  @Output() public itemClick: EventEmitter<Repository> = new EventEmitter();
+  @Output() public itemClick: EventEmitter<Repository> = new EventEmitter(); 
 
   public constructor() {}
+
+  getBadgeText() {
+    return '99+'
+  }
 }

@@ -10,6 +10,8 @@ import {
   NbListModule,
   NbIconModule,
   NbTooltipModule,
+  NbButtonModule,
+  NbButtonGroupModule,
 } from '@nebular/theme';
 
 @NgModule({
@@ -24,6 +26,9 @@ import {
     NbEvaIconsModule,
     NbIconModule,
     NbTooltipModule,
+    NbButtonModule,
+
+    NbButtonGroupModule
   ],
   exports: [
     NbThemeModule,
@@ -35,6 +40,8 @@ import {
     NbEvaIconsModule,
     NbIconModule,
     NbTooltipModule,
+    NbButtonModule,
+    NbButtonGroupModule
   ],
 })
 export class CoreModule {}

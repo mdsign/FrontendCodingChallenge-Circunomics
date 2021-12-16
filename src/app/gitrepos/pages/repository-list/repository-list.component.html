@@ -2,7 +2,7 @@
   <nb-list
     nbInfiniteList
     listenWindowScroll
-    [threshold]="500"
+    [threshold]="10"
     (bottomThreshold)="loadNext()"
   >
     <nb-list-item *ngFor="let repository of repositories">

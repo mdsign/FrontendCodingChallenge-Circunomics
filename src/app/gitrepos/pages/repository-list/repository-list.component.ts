@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 import { RepoDialogComponent } from '../../components/repo-dialog.component/repo-dialog.component';
-import { Repository, RepositoryResponse } from '../../interfaces/gitrepo-interfaces';
+import { Repository } from '../../interfaces/gitrepo-interfaces';
 import { GitRepositoryService } from '../../services/gitrepo.service';
 
 @Component({
@@ -13,10 +13,13 @@ export class RepositoryListComponent implements OnInit {
   public repositories: Repository[] = [];
   public pageToLoadNext = 1;
 
-  public constructor(private gitRepoService: GitRepositoryService, private dialogService: NbDialogService) {}
+  public constructor(
+    private gitRepoService: GitRepositoryService,
+    private dialogService: NbDialogService
+    ) {}
 
   public ngOnInit(): void {
-      this.loadNext();
+      //this.loadNext();
   }
 
   public loadNext() {
@@ -29,6 +32,26 @@ export class RepositoryListComponent implements OnInit {
   }
 
   public open(repository: Repository) {
-    this.dialogService.open(RepoDialogComponent, {});
+    console.log('repo item...', repository)
+
+    const dialogRef = this.dialogService.open(RepoDialogComponent, {
+      context: {
+        dialogTitle: repository.name,
+        dialogData: repository
+      } 
+    });
+
+    dialogRef.onClose.subscribe(rate => {
+
+      const index = this.repositories?.findIndex(
+        (item: any) => item.id === repository.id
+      );
+
+      if (this.repositories && index !== undefined) {
+        const item = this.repositories[index];
+        this.repositories[index] = { ...item, starRating: rate };
+      }
+    });
+          
   }
 }

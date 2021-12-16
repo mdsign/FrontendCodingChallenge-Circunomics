@@ -1,58 +1,73 @@
 :host {
-  display: flex;
-
-  .l-avatar-container {
-    display: inline-block;
-    width: 105px;
-    height: 105px;
-    img {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 5px;
-      width: 100px;
-    }
-  }
-
+  display: flex; 
+  justify-content: space-between;
+  width: 100%;
   .l-repo-details {
     align-self: flex-start;
     padding-left: 10px;
-    .l-repo-name {
-      font-size: larger;
-      text-decoration: underline;
-      color: #4361ee;
-    }
-    .l-repo-description {
-      font-size: 14px;
-      font-style: italic;
-    }
-    .l-repo-owner {
-      font-size: small;
-      color: #6c757d;
-      span {
-        font-weight: bold;
-        text-transform: capitalize;
-        color: #495057;
+
+    .l-repo-avatar {
+      display: inline-block;
+      width: 105px;
+      height: 105px;
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 100px;
       }
     }
-    .l-repo-stars {
-      background-color: #0077b6;
-      border-radius: 5px;
-      min-width: 75px;
-      padding: 5px;
-      width: auto;
+    .l-repo-info {
       display: inline-block;
-      margin-top: 5px;
-      color: #ffffff;
+      vertical-align: top;
+      .l-repo-name {
+        font-size: larger;
+        text-decoration: underline;
+        color: #4361ee;
+      }
+      .l-repo-description {
+        font-size: 14px;
+        font-style: italic;
+      }
+      .l-repo-owner {
+        font-size: small;
+        color: #6c757d;
+        span {
+          font-weight: bold;
+          text-transform: capitalize;
+          color: #495057;
+        }
+      }
+      .l-repo-stars {
+        background-color: #0077b6;
+        border-radius: 5px;
+        min-width: 75px;
+        padding: 5px;
+        width: auto;
+        display: inline-block;
+        margin-top: 5px;
+        color: #ffffff;
+      }
+  
+      .l-repo-issues {
+        background-color: #e9ecef;
+        border-radius: 5px;
+        min-width: 75px;
+        padding: 5px;
+        width: auto;
+        display: inline-block;
+        margin: 5px 0 0 10px;
+      }
     }
+    
+  }
 
-    .l-repo-issues {
-      background-color: #e9ecef;
-      border-radius: 5px;
-      min-width: 75px;
-      padding: 5px;
-      width: auto;
-      display: inline-block;
-      margin: 5px 0 0 10px;
-    }
+  .l-repo-rating {
+    background-color: #00d68f;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    align-self: baseline;
+    color: #000000;
   }
 }

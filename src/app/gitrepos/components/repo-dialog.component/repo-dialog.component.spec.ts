@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { NbDialogRef } from "@nebular/theme";
 import { RepoDialogComponent } from "./repo-dialog.component";
 
 describe('RepoDialogComponent', () => {
@@ -9,7 +10,6 @@ describe('RepoDialogComponent', () => {
         await TestBed.configureTestingModule({
           imports: [],
           declarations: [RepoDialogComponent],
-          providers: [],
         }).compileComponents();
     
         fixture = TestBed.createComponent(RepoDialogComponent);

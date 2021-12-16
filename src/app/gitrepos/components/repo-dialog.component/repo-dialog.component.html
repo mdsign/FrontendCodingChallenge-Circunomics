@@ -1,1 +1,38 @@
-<div class="l-dialog-wrapper">Dialog component content....</div>
+<div class="l-dialog-wrapper">
+    <div class="l-repo-details">
+        <div class="l-repo-avatar">
+          <img
+            [src]="dialogData?.owner?.avatar_url"
+            alt="Repo Owner"
+            [title]="dialogData?.owner?.login"
+          />
+          <div class="l-repo-owner">
+            <span>{{ dialogData?.owner?.login }}</span>
+          </div>
+        </div>
+        <div class="l-repo-info">
+          <div class="l-repo-name">
+            <span >{{ dialogData?.name }}</span>
+          </div>
+      
+          <div class="l-repo-description">{{ dialogData?.description }}</div>
+          <span class="l-repo-topics" *ngFor="let topic of dialogData?.topics">
+              #{{ topic }}
+          </span>
+        </div>
+        
+      </div>
+    <div class="l-rating-container">
+        <div class="l-rating-label">Rate the repo</div>
+        <nb-button-group (valueChange)="updateGroupValue($event)">
+            <button *ngFor="let value of ratingStarValues" nbButtonToggle value="{{value}}">
+                {{ value }}
+            </button>           
+        </nb-button-group>
+    </div>   
+
+    <div class="l-dialog-buttons">
+        <button nbButton status="basic" (click)="cancel()">Cancel</button>
+        <button nbButton status="info" (click)="onRateSubmit(groupValue)">Rate</button>
+    </div>    
+</div>
