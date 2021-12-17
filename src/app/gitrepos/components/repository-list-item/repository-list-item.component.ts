@@ -12,8 +12,4 @@ export class RepositoryListItemComponent {
   @Output() public itemClick: EventEmitter<Repository> = new EventEmitter(); 
 
   public constructor() {}
-
-  getBadgeText() {
-    return '99+'
-  }
 }

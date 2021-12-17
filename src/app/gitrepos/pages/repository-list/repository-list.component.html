@@ -8,7 +8,7 @@
     <nb-list-item *ngFor="let repository of repositories">
       <app-repository-list-item
         [repository]="repository"
-        (itemClick)="open($event)"
+        (itemClick)="openDialog($event)"
       ></app-repository-list-item>
     </nb-list-item>
   </nb-list>
