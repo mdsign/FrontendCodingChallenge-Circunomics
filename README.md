@@ -2,6 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
+## Description
+
+A web application lists the most starred Github repos that were created in the last 30 days!!
+
+## Libraries Used
+
+- Nebular: A customizable Angular UI Library (For Infine Scroll and UI Layouts)
+- Eva Icons is a pack from Eva Design System.
+
+## App Structure
+
+- app
+
+    - core
+        core module with common bulding blocks like constants, scalable with more blocks.
+
+    - gitrepos
+        The main module of the application with below structure.
+
+        - components
+        - interfaces
+        - pages
+        - services
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
