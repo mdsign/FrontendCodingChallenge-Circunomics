@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 import { RepoDialogComponent } from '../../components/repo-dialog.component/repo-dialog.component';
 import { Repository } from '../../interfaces/gitrepo-interfaces';
@@ -9,7 +9,7 @@ import { GitRepositoryService } from '../../services/gitrepo.service';
   templateUrl: './repository-list.component.html',
   styleUrls: ['./repository-list.component.scss'],
 })
-export class RepositoryListComponent implements OnInit {
+export class RepositoryListComponent {
   public repositories: Repository[] = [];
   public pageToLoadNext = 1;
 
@@ -17,10 +17,6 @@ export class RepositoryListComponent implements OnInit {
     private gitRepoService: GitRepositoryService,
     private dialogService: NbDialogService
     ) {}
-
-  public ngOnInit(): void {
-      //this.loadNext();
-  }
 
   public loadNext() {
     this.gitRepoService
@@ -31,9 +27,7 @@ export class RepositoryListComponent implements OnInit {
       });
   }
 
-  public open(repository: Repository) {
-    console.log('repo item...', repository)
-
+  public openDialog(repository: Repository) {
     const dialogRef = this.dialogService.open(RepoDialogComponent, {
       context: {
         dialogTitle: repository.name,
