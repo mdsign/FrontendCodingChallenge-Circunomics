@@ -15,11 +15,9 @@ A web application lists the most starred Github repos that were created in the l
 
 - app
 
-    - core
-        core module with common bulding blocks like constants, scalable with more blocks.
+    - core: core module with common bulding blocks like constants, scalable with more blocks.
 
-    - gitrepos
-        The main module of the application with below structure.
+    - gitrepos: the main module of the application with below structure.
 
         - components
         - interfaces
